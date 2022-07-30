@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+  font-family: Verdana;
+  font-size: 24px;
+}
+
+#board {
+  cursor: pointer;
+  font-family: Courier New;
+}
+
+#rules {
+  font-size: 14px;
+}
+
+.row {
+  margin: auto;
+  display: inline-block;
+  flex-direction: row;
+}
+
+.peg {
+  margin: 10px 20px 10px 20px;
+}
+
+.oob {
+  opacity: 0%;
+}
