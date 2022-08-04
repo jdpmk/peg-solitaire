@@ -124,7 +124,7 @@ function initializeGame() {
     for (let j = 0; j < N; j++) {
       if (isOutOfBounds(i, j)) {
         board[i][j] = PegType.OOB;
-      } else if (isCenter(i, j)) {
+      } else if (C_isCenter(i, j)) {
         board[i][j] = PegType.EMPTY;
       } else {
         board[i][j] = PegType.FILLED;
