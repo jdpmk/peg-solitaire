@@ -1,4 +1,4 @@
 *~
 *.swp
 *.swo
-wasm/*.js
+wasm/peg-solitaire.js
