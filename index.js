@@ -24,17 +24,6 @@ const DIRS = [
   [-2, 0]
 ];
 
-function isOutOfBounds(i, j) {
-  return (i < 2 && j < 2) ||
-         (i < 2 && j > 4) ||
-         (i > 4 && j < 2) ||
-         (i > 4 && j > 4);
-}
-
-function isCenter(i, j) {
-  return i == 3 && j == 3;
-}
-
 function setPegInUi(i, j, type) {
   const peg = document.getElementById(`r${i}c${j}`);
 
@@ -122,7 +111,7 @@ function initializeGame() {
 
   for (let i = 0; i < N; i++) {
     for (let j = 0; j < N; j++) {
-      if (isOutOfBounds(i, j)) {
+      if (C_isOutOfBounds(i, j)) {
         board[i][j] = PegType.OOB;
       } else if (C_isCenter(i, j)) {
         board[i][j] = PegType.EMPTY;
@@ -146,10 +135,10 @@ function initializeGame() {
 
     peg.className = "peg";
     peg.id = `r${i}c${j}`;
-    if (isOutOfBounds(i, j)) {
+    if (C_isOutOfBounds(i, j)) {
       peg.innerText = Symbol.OOB;
       peg.className = "peg oob";
-    } else if (isCenter(i, j)) {
+    } else if (C_isCenter(i, j)) {
       peg.innerText = Symbol.EMPTY;
     } else {
       peg.innerText = Symbol.FILLED;
